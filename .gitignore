@@ -1,0 +1,38 @@
+# Binários e Compilação C / C++
+*.o
+*.obj
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+build/
+bin/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+venv/
+
+# Java
+*.class
+*.jar
+target/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dados volumosos / compactados
+data/brutos/*.zip
+data/brutos/*.tar.gz
+data/brutos/*.gz

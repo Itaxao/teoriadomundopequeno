@@ -1,0 +1,9 @@
+# Bibliotecas para manipulação, análise e visualização (se permitidas pelo professor)
+# Caso o trabalho exija implementação de grafos do zero em Python nativo,
+# estas bibliotecas podem ser usadas apenas para validação e geração de gráficos.
+
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Opcional (para comparação/validação de resultados e cálculo rápido de métricas de referência):
+# networkx>=3.0
