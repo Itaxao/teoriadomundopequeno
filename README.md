@@ -211,7 +211,7 @@ Todas as referências utilizadas possuem validação científica comprovada (Goo
 
 ```bibtex
 @misc{xavier2026teoriadomundopequeno,
-  author       = {Ítalo Xavier e Equipe},
+  author       = {Ítalo Xavier e Samuel Pianetti},
   title        = {Teoria do Mundo Pequeno na Rede do {Facebook}: Modelagem em Grafos e Validação Empírica},
   howpublished = {\url{https://github.com/Itaxao/teoriadomundopequeno}},
   year         = {2026},
