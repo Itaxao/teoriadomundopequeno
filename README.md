@@ -11,7 +11,7 @@
 > **Instituição:** Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG / UFCI-MG)  
 > **Professor Orientador:** Prof. Michel Pires da Silva  
 > **Data de Entrega:** 22 de novembro de 2026  
-> **Autores:** Ítalo Xavier e Equipe  
+> **Autores:** Ítalo Xavier Fonseca e Samuel Pianetti  
 
 ---
 
@@ -211,7 +211,7 @@ Todas as referências utilizadas possuem validação científica comprovada (Goo
 
 ```bibtex
 @misc{xavier2026teoriadomundopequeno,
-  author       = {Ítalo Xavier e Samuel Pianetti},
+  author       = {Ítalo Xavier Fonseca e Samuel Pianetti},
   title        = {Teoria do Mundo Pequeno na Rede do {Facebook}: Modelagem em Grafos e Validação Empírica},
   howpublished = {\url{https://github.com/Itaxao/teoriadomundopequeno}},
   year         = {2026},

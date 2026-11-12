@@ -1,6 +1,6 @@
 # Validação Empírica da Teoria do Mundo Pequeno na Rede de Amizades do Facebook: Modelagem em Grafos e Análise de Menores Caminhos
 
-**Autores:** Ítalo Xavier$^1$, Integrantes da Equipe$^1$, Prof. Michel Pires da Silva$^2$  
+**Autores:** Ítalo Xavier Fonseca$^1$, Samuel Pianetti$^1$, Prof. Michel Pires da Silva$^2$  
 $^1$*Departamento de Computação — Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG)*  
 $^2$*Professor Orientador — Departamento de Computação, CEFET-MG / UFCI-MG*  
 *Disciplina: Estruturas em Árvores e Teoria dos Grafos (Estruturas de Dados)*  
