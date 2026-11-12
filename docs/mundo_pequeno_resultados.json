@@ -1,0 +1,64 @@
+{
+  "analise_watts_strogatz": {
+    "n_vertices": 4039,
+    "n_arestas": 88234,
+    "grau_medio": 43.69101262688784,
+    "probabilidade_p": 0.010819963503439287,
+    "clustering_real": 0.6055467186200862,
+    "clustering_aleatorio": 0.010819963503439287,
+    "razao_clustering_gamma": 55.96568957257612,
+    "distancia_media_real": 3.6925068496963913,
+    "distancia_media_aleatoria": 2.198421846915431,
+    "razao_distancia_lambda": 1.6796170647945872,
+    "diametro_real": 8,
+    "indice_small_world_sigma": 33.32050545665334,
+    "e_mundo_pequeno": true,
+    "total_triangulos": 1612010
+  },
+  "superconectores_top5": [
+    {
+      "rank": 1,
+      "vertice": 107,
+      "grau": 1045,
+      "fracao_rede_pct": 25.872740777420155
+    },
+    {
+      "rank": 2,
+      "vertice": 1684,
+      "grau": 792,
+      "fracao_rede_pct": 19.608814062886854
+    },
+    {
+      "rank": 3,
+      "vertice": 1912,
+      "grau": 755,
+      "fracao_rede_pct": 18.692745729140878
+    },
+    {
+      "rank": 4,
+      "vertice": 3437,
+      "grau": 547,
+      "fracao_rede_pct": 13.5429561772716
+    },
+    {
+      "rank": 5,
+      "vertice": 0,
+      "grau": 347,
+      "fracao_rede_pct": 8.591235454320376
+    }
+  ],
+  "metricas_caminhos": {
+    "distancia_media": 3.6925068496963913,
+    "diametro": 8,
+    "percentuais_acumulados": {
+      "1": 1.0819963503439287,
+      "2": 17.735707363360774,
+      "3": 42.150044986100724,
+      "4": 78.08962908815866,
+      "5": 93.81771904221115,
+      "6": 97.96999070847254,
+      "7": 99.9042274917131,
+      "8": 100.0
+    }
+  }
+}

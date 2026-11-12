@@ -43,7 +43,7 @@
   },
   "total_pares": 8154741,
   "conexo": true,
-  "tempo_bfs_segundos": 8.617334500013385,
+  "tempo_bfs_segundos": 7.850903499987908,
   "respostas_chave": {
     "distancia_media_menor_que_6": true,
     "distancia_media_real": 3.6925,
