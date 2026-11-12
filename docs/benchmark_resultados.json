@@ -1,0 +1,67 @@
+{
+  "carregamento": {
+    "tempo_segundos": 2.2484815000207163,
+    "memoria_pico_mb": 15.101673126220703,
+    "memoria_atual_mb": 15.084087371826172,
+    "num_vertices": 4039,
+    "num_arestas": 88234
+  },
+  "bfs_unitaria": {
+    "amostras": 20,
+    "tempo_medio_ms": 14.3171249947045,
+    "tempo_min_ms": 11.959299969021231,
+    "tempo_max_ms": 19.531700003426522,
+    "desvio_padrao_ms": 1.7454492708920057,
+    "arestas_por_segundo_medio": 12491921.952650467
+  },
+  "escalabilidade": [
+    {
+      "num_nos_origem": 10,
+      "tempo_segundos": 0.06723190000047907,
+      "tempo_por_no_ms": 6.723190000047907,
+      "pares_avaliados": 40335
+    },
+    {
+      "num_nos_origem": 50,
+      "tempo_segundos": 0.35572519997367635,
+      "tempo_por_no_ms": 7.114503999473527,
+      "pares_avaliados": 200675
+    },
+    {
+      "num_nos_origem": 100,
+      "tempo_segundos": 0.7148915000143461,
+      "tempo_por_no_ms": 7.148915000143461,
+      "pares_avaliados": 398850
+    },
+    {
+      "num_nos_origem": 250,
+      "tempo_segundos": 1.7788910000235774,
+      "tempo_por_no_ms": 7.1155640000943094,
+      "pares_avaliados": 978375
+    },
+    {
+      "num_nos_origem": 500,
+      "tempo_segundos": 3.8743137000128627,
+      "tempo_por_no_ms": 7.748627400025725,
+      "pares_avaliados": 1894250
+    }
+  ],
+  "paralelo": {
+    "cores_disponiveis": 12,
+    "origens_testadas": 1000,
+    "tempos_por_worker": {
+      "1": 7.4394350000075065,
+      "2": 5.8904649000032805,
+      "4": 4.136339199962094,
+      "8": 3.453131399990525,
+      "12": 4.6952307999599725
+    },
+    "speedups": {
+      "1": 1.0,
+      "2": 1.2629622833340988,
+      "4": 1.7985553506046317,
+      "8": 2.154402522889201,
+      "12": 1.5844663056970338
+    }
+  }
+}

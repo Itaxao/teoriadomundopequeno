@@ -1,0 +1,56 @@
+{
+  "pergunta": "1. A distância média entre dois usuários no Facebook realmente é menor que 6?",
+  "resumo_grafo": {
+    "num_vertices": 4039,
+    "num_arestas": 88234,
+    "grau_medio": 43.69101262688784,
+    "grau_min": 1,
+    "grau_max": 1045,
+    "densidade": 0.010819963503439287,
+    "direcionado": false
+  },
+  "distancia_media": 3.6925068496963913,
+  "diametro": 8,
+  "distribuicao_distancias": {
+    "1": 88234,
+    "2": 1358067,
+    "3": 1990926,
+    "4": 2930780,
+    "5": 1282585,
+    "6": 338607,
+    "7": 157732,
+    "8": 7810
+  },
+  "percentuais_distancias": {
+    "1": 1.0819963503439287,
+    "2": 16.653711013016846,
+    "3": 24.41433762273995,
+    "4": 35.93958410205793,
+    "5": 15.728089954052496,
+    "6": 4.152271666261381,
+    "7": 1.9342367832405714,
+    "8": 0.09577250828689715
+  },
+  "percentuais_acumulados": {
+    "1": 1.0819963503439287,
+    "2": 17.735707363360774,
+    "3": 42.150044986100724,
+    "4": 78.08962908815866,
+    "5": 93.81771904221115,
+    "6": 97.96999070847254,
+    "7": 99.9042274917131,
+    "8": 100.0
+  },
+  "total_pares": 8154741,
+  "conexo": true,
+  "tempo_bfs_segundos": 8.617334500013385,
+  "respostas_chave": {
+    "distancia_media_menor_que_6": true,
+    "distancia_media_real": 3.6925,
+    "diametro_real": 8,
+    "percentual_ate_3_saltos": 42.15,
+    "percentual_ate_4_saltos": 78.09,
+    "percentual_ate_5_saltos": 93.82,
+    "percentual_ate_6_saltos": 97.97
+  }
+}
