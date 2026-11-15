@@ -25,6 +25,7 @@ if diretorio_raiz not in sys.path:
 from src.carregador import carregar_dataset_facebook
 from src.bfs import calcular_metricas_caminhos, bfs_caminho
 from src.mundo_pequeno import analisar_mundo_pequeno, identificar_superconectores
+from src.exportador_gephi import exportar_para_gephi
 from src.gerar_fluxograma import gerar_fluxograma_metodologia
 from src.benchmark import executar_bateria_completa_benchmarks
 from src.visualizacao import (
@@ -136,6 +137,15 @@ def main():
     print(f"    -> Distância Média Aleatória (L_rand):     {analise_sm['distancia_media_aleatoria']:.4f}")
     print(f"    -> Razão de Distância (lambda = L/L_rand):  {analise_sm['razao_distancia_lambda']:.2f}")
     print(f"    -> Índice Small-World (sigma):             {analise_sm['indice_small_world_sigma']:.2f} (>> 1 => Confirma Mundo Pequeno)")
+
+    # Exportação para o Gephi e Zenodo
+    pasta_processados = os.path.join(diretorio_raiz, "data", "processados")
+    arqs_gephi = exportar_para_gephi(
+        grafo=grafo,
+        pasta_saida=pasta_processados,
+        diretorio_facebook=diretorio_dataset,
+    )
+    print(f"    -> [Gephi] Grafo GEXF e CSVs exportados em: {pasta_processados}")
 
     # 6. Execução dos Benchmarks
     print("\n[*] [ETAPA 6/6] Executando bateria de benchmarks de desempenho...")
