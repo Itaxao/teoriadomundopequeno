@@ -60,7 +60,7 @@ $$\sigma = \frac{\gamma}{\lambda} = \frac{C / C_{\text{rand}}}{L / L_{\text{rand
 ## 3. Metodologia
 
 ### 3.1. Origem e Natureza dos Dados
-Utilizou-se o dataset real de amizades do Facebook mantido pelo *Stanford Network Analysis Project* (SNAP) [5, 6]. O conjunto de dados foi obtido por meio de amostragem de 10 participantes voluntários (*ego nodes*), dos quais foram mineradas as redes sociais completas, círculos sociais informados pelo usuário (`.circles`) e atributos anonimizados (`.feat`). Para a análise da topologia de conexão, consolidou-se o grafo unificado contendo todas as arestas mútuas entre amigos da lista de vizinhança estendida.
+Utilizou-se o dataset real de amizades do Facebook mantido pelo *Stanford Network Analysis Project* (SNAP) [5, 6]. O conjunto de dados foi obtido por meio de amostragem de 10 participantes voluntários (*ego nodes*), dos quais foram mineradas as redes sociais completas, círculos sociais informados pelo usuário (`.circles`) e atributos anonimizados (`.feat`). Para a análise da topologia de conexão, consolidou-se o grafo unificado contendo todas as arestas mútuas entre amigos da lista de vizinhança estendida. A base de dados tratada, normalizada e enriquecida com as métricas topológicas (nos formatos `.txt`, `.csv` e `.gexf`) encontra-se depositada em repositório científico aberto no Zenodo [12], e toda a implementação algorítmica está disponível publicamente no repositório GitHub do projeto [11].
 
 ### 3.2. Estruturação de Dados e Otimização em Memória
 A fim de garantir máxima eficiência computacional em Python nativo sem dependência de bibliotecas de grafos de terceiros (como NetworkX), a classe `Grafo` foi arquitetada sobre uma lista de adjacência implementada com dicionários de conjuntos (`dict[int, set[int]]`). 
@@ -137,7 +137,7 @@ Para verificar a conformidade com as leis de redes de mundo pequeno, comparou-se
 
 A razão de agrupamento $\gamma = \frac{C_{\text{real}}}{C_{\text{rand}}} = 55,97$ revela que os amigos de um usuário do Facebook possuem probabilidade 56 vezes maior de serem amigos entre si do que ocorreria ao acaso. Ao mesmo tempo, a distância média permaneceu da mesma ordem de grandeza do grafo aleatório ($\lambda = 1,68$). O índice composto de Humphries–Gurney alcançou $\sigma = 33,32 \gg 1$, consolidando a comprovação matemática incontestável de que a rede de amizades estudada é um sistema de Mundo Pequeno genuíno.
 
-### 4.4. Papel dos Superconectores (*Hubs*)
+### 4.4. Papel dos Superconectores (*Hubs*) e Análise Topológica no Gephi
 A análise da distribuição de graus revela forte assimetria e comportamento de cauda pesada. Enquanto a esmagadora maioria dos nós possui poucas dezenas de conexões, a rede abriga nós de altíssimo grau:
 
 | Ranking | Vértice (ID) | Grau ($\deg(u)$) | Cobertura Direta da Rede (%) |
@@ -147,6 +147,11 @@ A análise da distribuição de graus revela forte assimetria e comportamento de
 | **3º** | Nó 1912 | $755$ amigos | $18,69\%$ |
 | **4º** | Nó 3437 | $547$ amigos | $13,54\%$ |
 | **5º** | Nó 0 | $347$ amigos | $8,59\%$ |
+
+Para inspecionar visualmente a organização mesoscópica das comunidades e a atuação dessas pontes, o grafo enriquecido foi exportado para o formato `.gexf` e submetido ao software *Gephi* [10]. A figura abaixo apresenta a topologia completa obtida após particionamento por classes de Modularidade de Louvain e espacialização combinando o algoritmo multinível de *Yifan Hu* com o refinamento por forças *ForceAtlas 2* (*Dissuade Hubs* e *Prevent Overlap* ativados):
+
+![Visualização Topológica da Rede no Gephi](../figuras/rede_gephi.png)
+*Figura: Visualização topológica completa da rede Facebook ($|V|=4.039$, $|E|=88.234$) gerada no Gephi: cores representam comunidades detectadas por Modularidade e o diâmetro dos nós é proporcional ao grau, destacando os superconectores (hubs) e seus feixes de conexões curvas.*
 
 ![Distribuição de Graus](../figuras/distribuicao_graus.png)
 *Figura: Distribuição de graus dos nós evidenciando o padrão de cauda longa com a presença de nós superconectados (hubs).*
@@ -195,4 +200,6 @@ Como limitações da pesquisa, ressalta-se o uso de uma amostra consolidada de 1
 7. **CORMEN, Thomas H. et al.** *Introduction to Algorithms*. 4. ed. Cambridge, MA: MIT Press, 2022.
 8. **ERDŐS, Paul; RÉNYI, Alfréd.** On random graphs I. *Publicationes Mathematicae Debrecen*, v. 6, p. 290–297, 1959.
 9. **HUMPHRIES, Mark D.; GURNEY, Kevin.** Network ‘small-world-ness’: a quantitative method for determining a network's style of small-world. *PLoS ONE*, v. 3, n. 4, p. e002051, 2008. DOI: 10.1371/journal.pone.0002051.
-10. **XAVIER, Ítalo.** *Teoria do Mundo Pequeno na Rede do Facebook: Implementação e Validação Empírica*. 2026. Disponível em: <https://github.com/Itaxao/teoriadomundopequeno>.
+10. **BASTIAN, Mathieu; HEYMANN, Sebastien; JACOMY, Mathieu.** Gephi: An Open Source Software for Exploring and Manipulating Networks. In: *Proceedings of the International AAAI Conference on Web and Social Media (ICWSM)*, v. 3, n. 1, p. 361–362, 2009.
+11. **FONSECA, Ítalo Xavier; PIANETTI, Samuel.** *Teoria do Mundo Pequeno na Rede do Facebook: Implementação e Validação Empírica (GitHub)*. 2026. Disponível em: <https://github.com/Itaxao/teoriadomundopequeno>.
+12. **FONSECA, Ítalo Xavier; PIANETTI, Samuel.** *Base de Dados Tratada da Rede de Amizades do Facebook (SNAP) Enriquecida com Métricas de Mundo Pequeno e Gephi (Zenodo)*. 2026. Disponível em: <https://zenodo.org/>.

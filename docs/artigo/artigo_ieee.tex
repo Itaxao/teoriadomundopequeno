@@ -29,7 +29,7 @@
 \author{
     \IEEEauthorblockN{Ítalo Xavier Fonseca\IEEEauthorrefmark{1}, Samuel Pianetti\IEEEauthorrefmark{1}, Michel Pires da Silva\IEEEauthorrefmark{2}}
     \IEEEauthorblockA{\IEEEauthorrefmark{1}Departamento de Computação -- Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG)\\
-    Belo Horizonte, Brasil -- Email: xavieritalo853@gmail.com}
+    Belo Horizonte, Brasil -- Emails: xavieritalo853@gmail.com, samuelpc2006@gmail.com}
     \IEEEauthorblockA{\IEEEauthorrefmark{2}Professor Orientador -- Departamento de Computação, CEFET-MG / UFCI-MG\\
     Belo Horizonte, Brasil -- Email: michel@cefetmg.br}
 }
@@ -92,7 +92,7 @@ No modelo aleatório nulo clássico de Erdős e Rényi \cite{erdos1959random}, $
 \label{sec:metodologia}
 
 \subsection{Origem e Natureza dos Dados}
-Utilizou-se o dataset real de amizades do Facebook mantido pelo \textit{Stanford Network Analysis Project} (SNAP) \cite{snapfacebook,mcauley2012learning}. O conjunto de dados foi obtido por meio de uma amostragem de 10 participantes voluntários (\textit{ego nodes}), dos quais foram mineradas as redes sociais completas, círculos sociais informados pelo usuário (\texttt{.circles}) e atributos anonimizados (\texttt{.feat}). Para a análise da topologia de conexão, consolidou-se o grafo unificado contendo todas as arestas mútuas entre amigos da lista de vizinhança estendida.
+Utilizou-se o dataset real de amizades do Facebook mantido pelo \textit{Stanford Network Analysis Project} (SNAP) \cite{snapfacebook,mcauley2012learning}. O conjunto de dados foi obtido por meio de uma amostragem de 10 participantes voluntários (\textit{ego nodes}), dos quais foram mineradas as redes sociais completas, círculos sociais informados pelo usuário (\texttt{.circles}) e atributos anonimizados (\texttt{.feat}). Para a análise da topologia de conexão, consolidou-se o grafo unificado contendo todas as arestas mútuas entre amigos da lista de vizinhança estendida. A base de dados tratada, normalizada e enriquecida com as métricas topológicas (nos formatos \texttt{.txt}, \texttt{.csv} e \texttt{.gexf}) encontra-se depositada em repositório científico aberto no Zenodo \cite{dataset_zenodo}, e toda a implementação algorítmica está disponível publicamente no repositório GitHub do projeto \cite{repositorio_projeto}.
 
 \subsection{Estruturação de Dados e Otimização em Memória}
 A fim de garantir máxima eficiência computacional em Python nativo sem dependência de bibliotecas de grafos de terceiros (como NetworkX), a classe \texttt{Grafo} foi arquitetada sobre uma lista de adjacência implementada com dicionários de conjuntos (\texttt{dict[int, set[int]]}). Para a fase crítica da BFS paralela, implementou-se o método \texttt{mapear\_para\_indices}, que mapeia os identificadores arbitrários dos nós para índices contíguos de $0$ a $|V|-1$. Isso possibilita o uso de vetores estáticos em memória (\texttt{list[int]} pré-alocada) indexados por inteiros contíguos para o vetor de distâncias (\texttt{[-1] * N}) e filas rápidas (\texttt{collections.deque}), eliminando por completo a sobrecarga de dispersão e buscas em tabelas hash durante o laço interno de travessia.
