@@ -57,8 +57,16 @@ Em conformidade com a Seção 3.2 (item 4) e Seção 3.3 da especificação da d
 
 ---
 
-## 📈 Visualizações e Análises Gráficas
+## 📈 Visualizações e Análises Gráficas (Gephi & Matplotlib)
 
+### Topologia Global da Rede e Comunidades no Gephi
+Visualização completa dos $4.039$ vértices e $88.234$ arestas gerada no **Gephi 0.11.4** a partir do arquivo exportado [`data/processados/facebook_mundo_pequeno.gexf`](data/processados/facebook_mundo_pequeno.gexf), utilizando detecção de comunidades por **Modularidade**, layout hierárquico **Yifan Hu** refinado com **ForceAtlas 2** (*Dissuade Hubs* e *Prevent Overlap*) e dimensionamento proporcional ao grau (evidenciando os **Superconectores / Hubs**):
+
+<p align="center">
+  <img src="docs/figuras/rede_gephi.png" width="75%" alt="Topologia Completa da Rede no Gephi">
+</p>
+
+### Gráficos de Distribuição e Escalabilidade
 <p align="center">
   <img src="docs/figuras/distribuicao_distancias.png" width="48%" alt="Distribuição de Distâncias">
   <img src="docs/figuras/graus_separacao_acumulado.png" width="48%" alt="Graus de Separação Acumulado">

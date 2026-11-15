@@ -212,8 +212,17 @@ Razão $\lambda = L / L_{\text{rand}}$ & $1,68\times$ & $1,00$ \\
 
 A razão de agrupamento $\gamma = \frac{C_{\text{real}}}{C_{\text{rand}}} = 55,97$ revela que os amigos de um usuário do Facebook possuem probabilidade 56 vezes maior de serem amigos entre si do que ocorreria ao acaso. Ao mesmo tempo, a distância média permaneceu da mesma ordem de grandeza do grafo aleatório ($\lambda = 1,68$). O índice composto de Humphries--Gurney alcançou $\sigma = 33,32 \gg 1$, consolidando a comprovação matemática incontestável de que a rede de amizades estudada é um sistema de Mundo Pequeno genuíno.
 
-\subsection{Papel dos Superconectores (\textit{Hubs})}
+\subsection{Papel dos Superconectores (\textit{Hubs}) e Análise Topológica no Gephi}
 A análise da distribuição de graus (Fig.~\ref{fig:graus}) revela forte assimetria e cauda pesada. Enquanto a esmagadora maioria dos nós possui poucas dezenas de conexões, a rede abriga nós de altíssimo grau. O vértice central de maior destaque (Nó 107) possui $1.045$ amizades diretas, conectando-se individualmente a $\mathbf{25,87\%}$ de todos os membros do grafo. Os nós 1684 e 1912 mantêm 792 e 755 conexões respectivamente. Estes superconectores atuam como verdadeiras pontes e atalhos transcomunitários, colapsando o que de outra forma seriam longos percursos entre aglomerados locais isolados.
+
+Para inspecionar visualmente a organização mesoscópica das comunidades e a atuação dessas pontes, o grafo enriquecido foi exportado para o formato \texttt{.gexf} e submetido ao software \textit{Gephi} \cite{bastian2009gephi}. A Fig.~\ref{fig:gephi} apresenta a topologia completa obtida após particionamento por classes de Modularidade de Louvain e espacialização combinando o algoritmo multinível de \textit{Yifan Hu} com o refinamento por forças \textit{ForceAtlas 2} (\textit{Dissuade Hubs} e \textit{Prevent Overlap} ativados). Observa-se com nitidez a formação de comunidades densas e bem delimitadas (codificadas por cores), interligadas globalmente pelos nós superconectores (esferas de maior diâmetro nas bordas de transição), o que ilustra visualmente o mecanismo físico da Teoria do Mundo Pequeno.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\linewidth]{../figuras/rede_gephi.png}
+\caption{Visualização topológica completa da rede Facebook ($|V|=4.039$, $|E|=88.234$) gerada no Gephi: cores representam comunidades detectadas por Modularidade e o diâmetro dos nós é proporcional ao grau, destacando os superconectores (\textit{hubs}) e seus feixes de conexões curvas.}
+\label{fig:gephi}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering
