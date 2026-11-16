@@ -1,48 +1,48 @@
 {
   "carregamento": {
-    "tempo_segundos": 2.286549800017383,
-    "memoria_pico_mb": 15.103164672851562,
-    "memoria_atual_mb": 15.085601806640625,
+    "tempo_segundos": 1.7934218000154942,
+    "memoria_pico_mb": 15.102460861206055,
+    "memoria_atual_mb": 15.084875106811523,
     "num_vertices": 4039,
     "num_arestas": 88234
   },
   "bfs_unitaria": {
     "amostras": 20,
-    "tempo_medio_ms": 12.753044994315132,
-    "tempo_min_ms": 11.63650001399219,
-    "tempo_max_ms": 14.448000001721084,
-    "desvio_padrao_ms": 0.6345940434775091,
-    "arestas_por_segundo_medio": 13870978.074705774
+    "tempo_medio_ms": 10.451125010149553,
+    "tempo_min_ms": 9.914600057527423,
+    "tempo_max_ms": 11.553699965588748,
+    "desvio_padrao_ms": 0.4246234255693389,
+    "arestas_por_segundo_medio": 16911759.723814104
   },
   "escalabilidade": [
     {
       "num_nos_origem": 10,
-      "tempo_segundos": 0.07099800003925338,
-      "tempo_por_no_ms": 7.099800003925338,
+      "tempo_segundos": 0.06234709999989718,
+      "tempo_por_no_ms": 6.234709999989718,
       "pares_avaliados": 40335
     },
     {
       "num_nos_origem": 50,
-      "tempo_segundos": 0.3897871000226587,
-      "tempo_por_no_ms": 7.795742000453174,
+      "tempo_segundos": 0.3106063000159338,
+      "tempo_por_no_ms": 6.212126000318676,
       "pares_avaliados": 200675
     },
     {
       "num_nos_origem": 100,
-      "tempo_segundos": 0.7492679000133649,
-      "tempo_por_no_ms": 7.4926790001336485,
+      "tempo_segundos": 0.6233725000638515,
+      "tempo_por_no_ms": 6.233725000638515,
       "pares_avaliados": 398850
     },
     {
       "num_nos_origem": 250,
-      "tempo_segundos": 1.9033844000077806,
-      "tempo_por_no_ms": 7.613537600031123,
+      "tempo_segundos": 1.5396266999887303,
+      "tempo_por_no_ms": 6.158506799954921,
       "pares_avaliados": 978375
     },
     {
       "num_nos_origem": 500,
-      "tempo_segundos": 3.77193669998087,
-      "tempo_por_no_ms": 7.54387339996174,
+      "tempo_segundos": 3.1171675000805408,
+      "tempo_por_no_ms": 6.2343350001610816,
       "pares_avaliados": 1894250
     }
   ],
@@ -50,18 +50,18 @@
     "cores_disponiveis": 12,
     "origens_testadas": 1000,
     "tempos_por_worker": {
-      "1": 7.454742899979465,
-      "2": 4.951605099951848,
-      "4": 3.5517143000033684,
-      "8": 3.338651400001254,
-      "12": 5.264369799988344
+      "1": 6.2271696999669075,
+      "2": 3.896117700031027,
+      "4": 2.5848227000096813,
+      "8": 2.3356952000176534,
+      "12": 2.5836466000182554
     },
     "speedups": {
       "1": 1.0,
-      "2": 1.5055204826515665,
-      "4": 2.0989140089258855,
-      "8": 2.232860519662719,
-      "12": 1.4160750827185373
+      "2": 1.5983012268641978,
+      "4": 2.409128370755791,
+      "8": 2.666088323476386,
+      "12": 2.4102250284241302
     }
   }
 }

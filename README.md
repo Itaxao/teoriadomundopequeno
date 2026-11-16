@@ -161,17 +161,23 @@ teoriadomundopequeno/
 │   ├── dataset/
 │   │   └── facebook/          # Dataset original Stanford SNAP (10 ego networks: .edges, .feat, .circles)
 │   ├── brutos/                # Cache consolidado em disco (facebook_combined.txt)
+│   ├── processados/           # Pacote preparado para o Gephi e depósito no Zenodo
+│   │   ├── README_DATASET.md  # Metadados e documentação técnica do dataset tratado
+│   │   ├── facebook_mundo_pequeno.gexf # Grafo completo formatado para Gephi (GEXF 1.2)
+│   │   ├── gephi_nos.csv      # Tabela de nós enriquecida com métricas e hubs
+│   │   └── gephi_arestas.csv  # Tabela padronizada de conexões mútuas
 │   └── exemplos/              # Grafos sintéticos de validação
 ├── docs/
 │   ├── artigo/                # Pacote completo do Artigo Científico (IEEE Template)
 │   │   ├── artigo_ieee.tex    # Artigo completo em formato LaTeX padrão IEEE Conference
-│   │   ├── referencias.bib    # Referências bibliográficas oficiais em BibTeX
+│   │   ├── referencias.bib    # 21 Referências bibliográficas oficiais em BibTeX
 │   │   └── artigo_completo.md # Versão espelho completa em Markdown
-│   ├── figuras/               # Figuras e gráficos vetoriais em alta resolução (300 DPI)
+│   ├── figuras/               # Figuras e gráficos em alta resolução (300 DPI)
 │   │   ├── fluxograma_metodologia.png     # Fluxograma obrigatório da proposta
 │   │   ├── distribuicao_distancias.png    # Histograma de menores caminhos
 │   │   ├── graus_separacao_acumulado.png  # Curva acumulada de separação
 │   │   ├── distribuicao_graus.png         # Distribuição de graus e hubs
+│   │   ├── rede_gephi.png                 # Visualização topológica e comunidades no Gephi
 │   │   ├── subgrafo_ego.png               # Visualização da ego network 0
 │   │   └── benchmark_escalabilidade.png   # Curvas de speedup e tempo
 │   ├── pergunta1_resultados.json          # Métricas da Pergunta 1 em formato JSON
@@ -184,6 +190,7 @@ teoriadomundopequeno/
 │   ├── carregador.py          # Leitor e normalizador do dataset Stanford SNAP
 │   ├── bfs.py                 # BFS sequencial e paralela para todos os pares
 │   ├── mundo_pequeno.py       # Coeficiente de Agrupamento, Erdős-Rényi e Hubs
+│   ├── exportador_gephi.py    # Exportação para formatos nativos do Gephi (.gexf e .csv)
 │   ├── gerar_fluxograma.py    # Gerador automático do fluxograma metodológico
 │   ├── visualizacao.py        # Módulo de plotagem gráfica com Matplotlib
 │   ├── benchmark.py           # Bateria de benchmarks e escalabilidade
@@ -191,7 +198,8 @@ teoriadomundopequeno/
 ├── tests/
 │   ├── test_grafo.py          # Testes de inserção, graus e lista de adjacência
 │   ├── test_bfs.py            # Testes de caminhos mínimos e BFS
-│   └── test_mundo_pequeno.py  # Testes de agrupamento, triângulos e hubs
+│   ├── test_mundo_pequeno.py  # Testes de agrupamento, triângulos e hubs
+│   └── test_exportador_gephi.py # Testes da exportação GEXF e tabelas CSV
 ├── LICENSE                    # Licença de código aberto (MIT)
 ├── requirements.txt           # Dependências estritas do projeto (matplotlib, numpy)
 └── README.md                  # Este documento
@@ -204,14 +212,26 @@ teoriadomundopequeno/
 Todas as referências utilizadas possuem validação científica comprovada (Google Scholar / IEEE / Nature):
 
 1. **MILGRAM, S.** The Small-World Problem. *Psychology Today*, v. 2, n. 1, p. 60–67, 1967.
-2. **WATTS, D. J.; STROGATZ, S. H.** Collective dynamics of ‘small-world’ networks. *Nature*, v. 393, n. 6684, p. 440–442, 1998. DOI: 10.1038/30918.
-3. **BACKSTROM, L. et al.** Four degrees of separation. In: *Proceedings of the 4th Annual ACM Web Science Conference (WebSci '12)*, p. 33–42, 2012. DOI: 10.1145/2380718.2380723.
-4. **NEWMAN, M. E. J.** The structure and function of complex networks. *SIAM Review*, v. 45, n. 2, p. 167–256, 2003. DOI: 10.1137/S003614450342480.
-5. **LESKOVEC, J.; KREVL, A.** *SNAP Datasets: Stanford Large Network Dataset Collection*, 2014. Disponível em: <http://snap.stanford.edu/data/ego-Facebook.html>.
-6. **MCAULEY, J.; LESKOVEC, J.** Learning to discover social circles in ego networks. In: *Advances in Neural Information Processing Systems (NeurIPS 2012)*, v. 25, p. 539–547, 2012.
-7. **CORMEN, T. H. et al.** *Introduction to Algorithms*. 4. ed. Cambridge, MA: MIT Press, 2022.
-8. **ERDŐS, P.; RÉNYI, A.** On random graphs I. *Publicationes Mathematicae Debrecen*, v. 6, p. 290–297, 1959.
-9. **HUMPHRIES, M. D.; GURNEY, K.** Network ‘small-world-ness’: a quantitative method for determining a network's style of small-world. *PLoS ONE*, v. 3, n. 4, p. e002051, 2008. DOI: 10.1371/journal.pone.0002051.
+2. **TRAVERS, J.; MILGRAM, S.** An Experimental Study of the Small World Problem. *Sociometry*, v. 32, n. 4, p. 425–443, 1969. DOI: 10.2307/2786545.
+3. **WATTS, D. J.; STROGATZ, S. H.** Collective dynamics of ‘small-world’ networks. *Nature*, v. 393, n. 6684, p. 440–442, 1998. DOI: 10.1038/30918.
+4. **GRANOVETTER, M. S.** The Strength of Weak Ties. *American Journal of Sociology*, v. 78, n. 6, p. 1360–1380, 1973. DOI: 10.1086/225469.
+5. **BARABÁSI, A.-L.; ALBERT, R.** Emergence of Scaling in Random Networks. *Science*, v. 286, n. 5439, p. 509–512, 1999. DOI: 10.1126/science.286.5439.509.
+6. **BACKSTROM, L. et al.** Four degrees of separation. In: *Proceedings of the 4th Annual ACM Web Science Conference (WebSci '12)*, p. 33–42, 2012. DOI: 10.1145/2380718.2380723.
+7. **UGANDER, J. et al.** The Anatomy of the Facebook Social Graph. *arXiv preprint arXiv:1111.4503*, 2011.
+8. **MCAULEY, J.; LESKOVEC, J.** Learning to Discover Social Circles in Ego Networks. In: *Advances in Neural Information Processing Systems (NeurIPS 2012)*, v. 25, p. 539–547, 2012.
+9. **NEWMAN, M. E. J.** The Structure and Function of Complex Networks. *SIAM Review*, v. 45, n. 2, p. 167–256, 2003. DOI: 10.1137/S003614450342480.
+10. **HUMPHRIES, M. D.; GURNEY, K.** Network ‘Small-World-Ness’: A Quantitative Method for Determining a Network's Style of Small-World. *PLoS ONE*, v. 3, n. 4, p. e002051, 2008. DOI: 10.1371/journal.pone.0002051.
+11. **LATORA, V.; MARCHIORI, M.** Efficient Behavior of Small-World Networks. *Physical Review Letters*, v. 87, n. 19, p. 198701, 2001. DOI: 10.1103/PhysRevLett.87.198701.
+12. **ERDŐS, P.; RÉNYI, A.** On Random Graphs I. *Publicationes Mathematicae Debrecen*, v. 6, p. 290–297, 1959.
+13. **MOORE, E. F.** The Shortest Path Through a Maze. In: *Proceedings of the International Symposium on the Theory of Switching*, Harvard University Press, p. 285–292, 1959.
+14. **TARJAN, R.** Depth-First Search and Linear Graph Algorithms. *SIAM Journal on Computing*, v. 1, n. 2, p. 146–160, 1972. DOI: 10.1137/0201010.
+15. **CORMEN, T. H. et al.** *Introduction to Algorithms*. 4. ed. Cambridge, MA: MIT Press, 2022.
+16. **SEDGEWICK, R.; WAYNE, K.** *Algorithms*. 4. ed. Boston, MA: Addison-Wesley Professional, 2011.
+17. **BLONDEL, V. D. et al.** Fast unfolding of communities in large networks. *Journal of Statistical Mechanics: Theory and Experiment*, v. 2008, n. 10, p. P10008, 2008. DOI: 10.1088/1742-5468/2008/10/P10008.
+18. **BASTIAN, M.; HEYMANN, S.; JACOMY, M.** Gephi: An Open Source Software for Exploring and Manipulating Networks. In: *Proceedings of the International AAAI Conference on Web and Social Media (ICWSM)*, v. 3, n. 1, p. 361–362, 2009.
+19. **LESKOVEC, J.; KREVL, A.** *SNAP Datasets: Stanford Large Network Dataset Collection*, 2014. Disponível em: <http://snap.stanford.edu/data/ego-Facebook.html>.
+20. **FONSECA, Í. X.; PIANETTI, S.** *Teoria do Mundo Pequeno na Rede do Facebook: Implementação e Validação Empírica (GitHub)*, 2026. Disponível em: <https://github.com/Itaxao/teoriadomundopequeno>.
+21. **FONSECA, Í. X.; PIANETTI, S.** *Base de Dados Tratada da Rede de Amizades do Facebook (SNAP) Enriquecida com Métricas de Mundo Pequeno e Gephi (Zenodo)*, 2026. Disponível em: <https://zenodo.org/>.
 
 ---
 
