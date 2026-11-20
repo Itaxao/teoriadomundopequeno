@@ -223,15 +223,13 @@ Todas as referências utilizadas possuem validação científica comprovada (Goo
 10. **HUMPHRIES, M. D.; GURNEY, K.** Network ‘Small-World-Ness’: A Quantitative Method for Determining a Network's Style of Small-World. *PLoS ONE*, v. 3, n. 4, p. e002051, 2008. DOI: 10.1371/journal.pone.0002051.
 11. **LATORA, V.; MARCHIORI, M.** Efficient Behavior of Small-World Networks. *Physical Review Letters*, v. 87, n. 19, p. 198701, 2001. DOI: 10.1103/PhysRevLett.87.198701.
 12. **ERDŐS, P.; RÉNYI, A.** On Random Graphs I. *Publicationes Mathematicae Debrecen*, v. 6, p. 290–297, 1959.
-13. **MOORE, E. F.** The Shortest Path Through a Maze. In: *Proceedings of the International Symposium on the Theory of Switching*, Harvard University Press, p. 285–292, 1959.
-14. **TARJAN, R.** Depth-First Search and Linear Graph Algorithms. *SIAM Journal on Computing*, v. 1, n. 2, p. 146–160, 1972. DOI: 10.1137/0201010.
-15. **CORMEN, T. H. et al.** *Introduction to Algorithms*. 4. ed. Cambridge, MA: MIT Press, 2022.
-16. **SEDGEWICK, R.; WAYNE, K.** *Algorithms*. 4. ed. Boston, MA: Addison-Wesley Professional, 2011.
-17. **BLONDEL, V. D. et al.** Fast unfolding of communities in large networks. *Journal of Statistical Mechanics: Theory and Experiment*, v. 2008, n. 10, p. P10008, 2008. DOI: 10.1088/1742-5468/2008/10/P10008.
-18. **BASTIAN, M.; HEYMANN, S.; JACOMY, M.** Gephi: An Open Source Software for Exploring and Manipulating Networks. In: *Proceedings of the International AAAI Conference on Web and Social Media (ICWSM)*, v. 3, n. 1, p. 361–362, 2009.
-19. **LESKOVEC, J.; KREVL, A.** *SNAP Datasets: Stanford Large Network Dataset Collection*, 2014. Disponível em: <http://snap.stanford.edu/data/ego-Facebook.html>.
-20. **FONSECA, Í. X.; PIANETTI, S.** *Teoria do Mundo Pequeno na Rede do Facebook: Implementação e Validação Empírica (GitHub)*, 2026. Disponível em: <https://github.com/Itaxao/teoriadomundopequeno>.
-21. **FONSECA, Í. X.; PIANETTI, S.** *Base de Dados Tratada da Rede de Amizades do Facebook (SNAP) Enriquecida com Métricas de Mundo Pequeno e Gephi (Zenodo)*, 2026. Disponível em: <https://zenodo.org/>.
+13. **TARJAN, R.** Depth-First Search and Linear Graph Algorithms. *SIAM Journal on Computing*, v. 1, n. 2, p. 146–160, 1972. DOI: 10.1137/0201010.
+14. **SEDGEWICK, R.; WAYNE, K.** *Algorithms*. 4. ed. Boston, MA: Addison-Wesley Professional, 2011.
+15. **BLONDEL, V. D. et al.** Fast unfolding of communities in large networks. *Journal of Statistical Mechanics: Theory and Experiment*, v. 2008, n. 10, p. P10008, 2008. DOI: 10.1088/1742-5468/2008/10/P10008.
+16. **BASTIAN, M.; HEYMANN, S.; JACOMY, M.** Gephi: An Open Source Software for Exploring and Manipulating Networks. In: *Proceedings of the International AAAI Conference on Web and Social Media (ICWSM)*, v. 3, n. 1, p. 361–362, 2009.
+17. **LESKOVEC, J.; KREVL, A.** *SNAP Datasets: Stanford Large Network Dataset Collection*, 2014. Disponível em: <http://snap.stanford.edu/data/ego-Facebook.html>.
+18. **FONSECA, Í. X.; PIANETTI, S.** *Teoria do Mundo Pequeno na Rede do Facebook: Implementação e Validação Empírica (GitHub)*, 2026. Disponível em: <https://github.com/Itaxao/teoriadomundopequeno>.
+19. **FONSECA, Í. X.; PIANETTI, S.** *Base de Dados Tratada da Rede de Amizades do Facebook (SNAP) Enriquecida com Métricas de Mundo Pequeno e Gephi (Zenodo)*, 2026. DOI: [10.5281/zenodo.24396921](https://doi.org/10.5281/zenodo.24396921).
 
 ---
 

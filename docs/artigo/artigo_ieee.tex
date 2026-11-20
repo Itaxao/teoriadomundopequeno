@@ -71,10 +71,10 @@ O presente artigo está estruturado da seguinte forma: a Seção~\ref{sec:refere
 \subsection{Fundamentos da Teoria dos Grafos}
 Um grafo não-direcionado é definido formalmente pelo par ordenado $G = (V, E)$, onde $V$ representa o conjunto finito de vértices (indivíduos) e $E \subseteq \{\{u, v\} \mid u, v \in V, u \neq v\}$ denota o conjunto de arestas não-ordenadas (laços de amizade recíprocos). O grau de um vértice $u$, denotado por $k_u = \deg(u) = |\{v \in V \mid \{u, v\} \in E\}|$, quantifica a quantidade de conexões diretas mantidas por aquele nó. O grau médio da rede é dado por $\langle k \rangle = \frac{2|E|}{|V|}$.
 
-Para grafos esparsos em que $|E| \ll \frac{|V|(|V|-1)}{2}$, a literatura consagra a representação computacional por \textit{Lista de Adjacência} como a mais eficiente em termos de complexidade de espaço ($O(|V| + |E|)$), em oposição à \textit{Matriz de Adjacência} ($O(|V|^2)$), que despenderia gigabytes de alocação de memória predominantemente preenchidos por zeros \cite{cormen2022introduction,sedgewick2011algorithms}.
+Para grafos esparsos em que $|E| \ll \frac{|V|(|V|-1)}{2}$, a literatura consagra a representação computacional por \textit{Lista de Adjacência} como a mais eficiente em termos de complexidade de espaço ($O(|V| + |E|)$), em oposição à \textit{Matriz de Adjacência} ($O(|V|^2)$), que despenderia gigabytes de alocação de memória predominantemente preenchidos por zeros \cite{sedgewick2011algorithms}.
 
 \subsection{Caminhos Geodésicos e Busca em Largura (BFS)}
-A distância geodésica $d(u, v)$ entre dois vértices $u$ e $v$ corresponde ao número mínimo de arestas que compõem um caminho entre eles. Em grafos não-ponderados, o algoritmo ótimo para determinação de caminhos mínimos de fonte única (\textit{Single-Source Shortest Paths} - SSSP) é a Busca em Largura (\textit{Breadth-First Search} - BFS), introduzida formalmente por Moore \cite{moore1959shortest} e explorada em complexidade linear $O(|V| + |E|)$ por Tarjan \cite{tarjan1972depth} e Cormen et al. \cite{cormen2022introduction} mediante uso de fila FIFO (\textit{First-In, First-Out}).
+A distância geodésica $d(u, v)$ entre dois vértices $u$ e $v$ corresponde ao número mínimo de arestas que compõem um caminho entre eles. Em grafos não-ponderados, o algoritmo ótimo para determinação de caminhos mínimos de fonte única (\textit{Single-Source Shortest Paths} - SSSP) é a Busca em Largura (\textit{Breadth-First Search} - BFS), explorada em complexidade linear $O(|V| + |E|)$ por Tarjan \cite{tarjan1972depth} e fundamentada em estruturas de grafos por Sedgewick e Wayne \cite{sedgewick2011algorithms} mediante uso de fila FIFO (\textit{First-In, First-Out}).
 
 Para solucionar o problema de todos os pares (\textit{All-Pairs Shortest Paths} - APSP), executa-se a BFS a partir de cada um dos nós $u \in V$, totalizando complexidade assintótica de $O(|V| \cdot (|V| + |E|))$. A partir das distâncias geodésicas, definem-se a distância média global ($L$) e o diâmetro ($\mathcal{D}$):
 \begin{equation}
@@ -110,7 +110,7 @@ Em estrita conformidade com as exigências metodológicas da disciplina, a Fig.~
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{../figuras/fluxograma_metodologia.png}
+\includegraphics[width=\linewidth]{figuras/fluxograma_metodologia.png}
 \caption{Fluxograma metodológico: ciclo de vida completo da solução computacional desde a ingestão e tratamento do dataset SNAP até a extração e validação das métricas de Mundo Pequeno.}
 \label{fig:fluxograma}
 \end{figure}
@@ -218,14 +218,14 @@ A Fig.~\ref{fig:distancias} ilustra a curva de densidade de probabilidade das di
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\linewidth]{../figuras/distribuicao_distancias.png}
+\includegraphics[width=0.9\linewidth]{figuras/distribuicao_distancias.png}
 \caption{Histograma de distribuição dos menores caminhos geodésicos na rede do Facebook, destacando a média $L=3,6925$ conexões.}
 \label{fig:distancias}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\linewidth]{../figuras/graus_separacao_acumulado.png}
+\includegraphics[width=0.9\linewidth]{figuras/graus_separacao_acumulado.png}
 \caption{Curva acumulada de graus de separação, demonstrando que $97,97\%$ da rede conecta-se a até 6 saltos.}
 \label{fig:acumulado}
 \end{figure}
@@ -262,14 +262,14 @@ Para inspecionar visualmente a organização mesoscópica das comunidades e a at
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.92\linewidth]{../figuras/rede_gephi.png}
+\includegraphics[width=0.92\linewidth]{figuras/rede_gephi.png}
 \caption{Visualização topológica completa da rede Facebook ($|V|=4.039$, $|E|=88.234$) gerada no Gephi: cores representam comunidades detectadas pelo algoritmo de Louvain e o diâmetro dos nós é proporcional ao grau, destacando os superconectores (\textit{hubs}) e seus feixes de conexões curvas.}
 \label{fig:gephi}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\linewidth]{../figuras/distribuicao_graus.png}
+\includegraphics[width=0.9\linewidth]{figuras/distribuicao_graus.png}
 \caption{Distribuição de graus dos nós evidenciando o padrão de cauda longa com a presença de nós superconectados (\textit{hubs}) de grau superior a $1.000$.}
 \label{fig:graus}
 \end{figure}
@@ -297,7 +297,7 @@ Aceleração Prática (\textit{Speedup}) & $\mathbf{12,07\times}$ \\
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\linewidth]{../figuras/benchmark_escalabilidade.png}
+\includegraphics[width=0.9\linewidth]{figuras/benchmark_escalabilidade.png}
 \caption{Curvas de escalabilidade de processamento da BFS e curva de \textit{Speedup} em função do número de núcleos de CPU.}
 \label{fig:bench}
 \end{figure}
