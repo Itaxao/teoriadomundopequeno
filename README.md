@@ -144,8 +144,6 @@ O artigo científico formal exigido como entregável principal da disciplina (15
 
 - **Código LaTeX Fonte:** [`docs/artigo/artigo_ieee.tex`](docs/artigo/artigo_ieee.tex)
 - **Base BibTeX de Citações:** [`docs/artigo/referencias.bib`](docs/artigo/referencias.bib)
-- **Versão Markdown Espelho:** [`docs/artigo/artigo_completo.md`](docs/artigo/artigo_completo.md)
-
 ---
 
 ## 📁 Estrutura do Repositório
