@@ -146,11 +146,6 @@ O artigo científico formal exigido como entregável principal da disciplina (15
 - **Base BibTeX de Citações:** [`docs/artigo/referencias.bib`](docs/artigo/referencias.bib)
 - **Versão Markdown Espelho:** [`docs/artigo/artigo_completo.md`](docs/artigo/artigo_completo.md)
 
-### Como Compilar o Artigo no Overleaf:
-1. Acesse o [Overleaf](https://www.overleaf.com/).
-2. Crie um novo projeto e faça o upload dos arquivos `artigo_ieee.tex`, `referencias.bib` e da pasta `docs/figuras/`.
-3. Selecione o compilador padrão `pdfLaTeX`.
-
 ---
 
 ## 📁 Estrutura do Repositório
